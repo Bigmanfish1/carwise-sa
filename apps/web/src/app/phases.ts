@@ -1,0 +1,38 @@
+export interface Phase {
+  slug: string;
+  name: string;
+  summary: string;
+}
+
+export const PHASES: readonly Phase[] = [
+  {
+    slug: 'plan',
+    name: 'Plan',
+    summary:
+      'Work out what you can afford, decide between new and used, and compare the total cost of up to three cars.',
+  },
+  {
+    slug: 'buy',
+    name: 'Buy',
+    summary:
+      'Vehicle finance, cash vs finance, trade-ins, on-the-road costs and a buying checklist.',
+  },
+  {
+    slug: 'insure',
+    name: 'Insure',
+    summary:
+      'Comprehensive vs third-party cover, comparing your own quotes, and what the excess really costs you.',
+  },
+  {
+    slug: 'run',
+    name: 'Run',
+    summary:
+      'Fuel, licence disc renewal, servicing, tyres, repairs, tolls and a business-travel logbook.',
+  },
+  {
+    slug: 'sell',
+    name: 'Sell / upgrade',
+    summary:
+      'Depreciation, settlement vs market value, private sale vs trade-in, and change-of-ownership steps.',
+  },
+];
