@@ -1,0 +1,12 @@
+{
+  "id": "fuel-prices",
+  "effectiveDate": "1970-01-01",
+  "source": "TODO: official URL (Department of Mineral and Petroleum Resources monthly fuel price adjustment)",
+  "verified": false,
+  "notes": "ILLUSTRATIVE PLACEHOLDER VALUES. Not real prices. Replace with official figures before relying on them.",
+  "values": {
+    "unit": "cents per litre",
+    "inland": { "petrol95": 2000, "diesel50": 1900 },
+    "coastal": { "petrol95": 1950, "diesel50": 1850 }
+  }
+}

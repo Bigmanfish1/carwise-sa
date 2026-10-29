@@ -2,31 +2,31 @@
 
 ## Milestone 0: Foundation (do now)
 
-- [ ] pnpm monorepo with `packages/core`, `apps/web`, `data/` and `content/`
-- [ ] TypeScript strict mode, ESLint, Prettier, Husky with lint-staged, and Vitest set up in core
-- [ ] Next.js app with Tailwind, a landing page, and a page listing the 5 ownership phases
-- [ ] GitHub Actions CI (lint, typecheck, test, build)
-- [ ] README (pitch, screenshots placeholder, local setup, contributing), MIT LICENSE, `.gitignore`, `.editorconfig`
-- [ ] Money utilities in core (cents, formatting, rounding) with tests
+- [x] pnpm monorepo with `packages/core`, `apps/web`, `data/` and `content/`
+- [x] TypeScript strict mode, ESLint, Prettier, Husky with lint-staged, and Vitest set up in core
+- [x] Next.js app with Tailwind, a landing page, and a page listing the 5 ownership phases
+- [x] GitHub Actions CI (lint, typecheck, test, build)
+- [x] README (pitch, screenshots placeholder, local setup, contributing), MIT LICENSE, `.gitignore`, `.editorconfig`
+- [x] Money utilities in core (cents, formatting, rounding) with tests
 
 ## Milestone 1: Vehicle finance calculator (do now)
 
-- [ ] `calculateFinance` in core. Inputs: price, deposit, trade-in, interest rate, term in months, balloon %, initiation fee (financed or upfront), monthly service fee
+- [x] `calculateFinance` in core. Inputs: price, deposit, trade-in, interest rate, term in months, balloon %, initiation fee (financed or upfront), monthly service fee
   - Monthly instalment with a balloon payment (payments in arrears):
     `PMT = (P − B / (1+r)^n) × r / (1 − (1+r)^−n)`, where P is the principal financed, B the balloon amount, r the annual rate / 12, and n the term in months
   - Handle r = 0 as a separate case
   - Outputs: instalment, total paid, total interest, balloon amount, and the effective cost of credit
-- [ ] Amortisation schedule (month, opening balance, interest, capital, closing balance)
-- [ ] Tests with hand-checked worked examples, edge cases (0% rate, 0 deposit, balloon = 0) and input validation
-- [ ] `/buy/finance` page: form, results card, amortisation table, and a chart of the balance over time
-- [ ] Comparison: the same car with and without a balloon payment
+- [x] Amortisation schedule (month, opening balance, interest, capital, closing balance)
+- [x] Tests with hand-checked worked examples, edge cases (0% rate, 0 deposit, balloon = 0) and input validation
+- [x] `/buy/finance` page: form, results card, amortisation table, and a chart of the balance over time
+- [x] Comparison: the same car with and without a balloon payment
 
 ## Milestone 2: Running costs
 
-- [ ] Fuel cost calculator (km per month, L/100km, fuel price, inland/coastal zone from `data/fuel-prices.json`)
-- [ ] Licence disc renewal estimate by province (`data/licence-fees.json`, which depends on tare mass)
-- [ ] Service schedule planner (interval in km or months, next-service prediction from average km)
-- [ ] Tyre replacement estimator
+- [x] Fuel cost calculator (km per month, L/100km, fuel price, inland/coastal zone from `data/fuel-prices.json`)
+- [x] Licence disc renewal estimate by province (`data/licence-fees.json`, which depends on tare mass)
+- [x] Service schedule planner (interval in km or months, next-service prediction from average km)
+- [x] Tyre replacement estimator
 
 ## Milestone 3: Total cost of ownership and comparison
 

@@ -30,6 +30,12 @@ export const PHASES: readonly Phase[] = [
     name: 'Run',
     summary:
       'Fuel, licence disc renewal, servicing, tyres, repairs, tolls and a business-travel logbook.',
+    tools: [
+      { href: '/run/fuel', label: 'Fuel cost calculator' },
+      { href: '/run/licence', label: 'Licence disc renewal estimate' },
+      { href: '/run/service', label: 'Service schedule planner' },
+      { href: '/run/tyres', label: 'Tyre replacement estimator' },
+    ],
   },
   {
     slug: 'sell',

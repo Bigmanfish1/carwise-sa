@@ -8,6 +8,7 @@ import {
   type FinanceInput,
 } from '@carwise/core';
 import { useMemo, useState } from 'react';
+import { ErrorList, Field, Stat } from '@/components/ui';
 import { BalanceChart } from './balance-chart';
 
 interface FormState {
@@ -48,47 +49,6 @@ function toInput(form: FormState): FinanceInput {
     initiationFeeFinanced: form.initiationFeeFinanced,
     monthlyServiceFee: randsToCents(num(form.monthlyServiceFee)),
   };
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-  suffix,
-  step = 'any',
-}: {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  suffix?: string;
-  step?: string;
-}) {
-  return (
-    <label className="block text-sm font-medium">
-      {label}
-      <span className="mt-1 flex items-center gap-2">
-        <input
-          type="number"
-          inputMode="decimal"
-          min={0}
-          step={step}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full rounded-md border border-slate-300 px-3 py-2 font-normal"
-        />
-        {suffix ? <span className="text-slate-500">{suffix}</span> : null}
-      </span>
-    </label>
-  );
-}
-
-function Stat({ label, value, strong }: { label: string; value: string; strong?: boolean }) {
-  return (
-    <div>
-      <dt className="text-sm text-slate-500">{label}</dt>
-      <dd className={strong ? 'text-2xl font-bold' : 'text-lg font-semibold'}>{value}</dd>
-    </div>
-  );
 }
 
 const percent = (value: number) => `${(value * 100).toFixed(2)}%`;
@@ -160,14 +120,7 @@ export function FinanceCalculator() {
 
       <div className="space-y-8" aria-live="polite">
         {!outcome.ok ? (
-          <div role="alert" className="rounded-md border border-red-200 bg-red-50 p-4 text-red-800">
-            <p className="font-medium">Check your inputs:</p>
-            <ul className="list-inside list-disc">
-              {[...new Set(outcome.errors)].map((message) => (
-                <li key={message}>{message}</li>
-              ))}
-            </ul>
-          </div>
+          <ErrorList errors={outcome.errors} />
         ) : (
           <Results comparison={outcome.comparison} hasBalloon={hasBalloon} />
         )}

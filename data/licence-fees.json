@@ -1,0 +1,228 @@
+{
+  "id": "licence-fees",
+  "effectiveDate": "1970-01-01",
+  "source": "TODO: official URL (each provincial licensing authority / eNaTIS fee schedule)",
+  "verified": false,
+  "notes": "ILLUSTRATIVE PLACEHOLDER VALUES. Not real fees; the same bands are used for every province until each is researched.",
+  "values": {
+    "unit": "cents per annual renewal",
+    "provinces": {
+      "EC": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "FS": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "GP": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "KZN": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "LP": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "MP": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "NC": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "NW": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      },
+      "WC": {
+        "bands": [
+          {
+            "maxTareKg": 1000,
+            "fee": 40000
+          },
+          {
+            "maxTareKg": 1500,
+            "fee": 50000
+          },
+          {
+            "maxTareKg": 2000,
+            "fee": 60000
+          },
+          {
+            "maxTareKg": 2500,
+            "fee": 70000
+          },
+          {
+            "maxTareKg": null,
+            "fee": 80000
+          }
+        ]
+      }
+    }
+  }
+}
