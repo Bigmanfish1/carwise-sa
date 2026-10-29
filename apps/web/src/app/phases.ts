@@ -2,6 +2,7 @@ export interface Phase {
   slug: string;
   name: string;
   summary: string;
+  tools?: readonly { href: string; label: string }[];
 }
 
 export const PHASES: readonly Phase[] = [
@@ -16,6 +17,7 @@ export const PHASES: readonly Phase[] = [
     name: 'Buy',
     summary:
       'Vehicle finance, cash vs finance, trade-ins, on-the-road costs and a buying checklist.',
+    tools: [{ href: '/buy/finance', label: 'Vehicle finance calculator' }],
   },
   {
     slug: 'insure',

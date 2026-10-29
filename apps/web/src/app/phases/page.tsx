@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PHASES } from '../phases';
 
 export const metadata: Metadata = { title: 'Ownership phases | Carwise SA' };
@@ -14,6 +15,11 @@ export default function PhasesPage() {
               {index + 1}. {phase.name}
             </h2>
             <p className="mt-1 text-slate-600">{phase.summary}</p>
+            {phase.tools?.map((tool) => (
+              <Link key={tool.href} href={tool.href} className="mt-2 inline-block underline">
+                {tool.label}
+              </Link>
+            ))}
           </li>
         ))}
       </ol>
