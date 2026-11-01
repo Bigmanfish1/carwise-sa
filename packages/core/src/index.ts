@@ -8,3 +8,4 @@ export * from './service';
 export * from './tyres';
 export * from './tco';
 export * from './affordability';
+export * from './garage';

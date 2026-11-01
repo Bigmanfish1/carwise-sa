@@ -13,7 +13,7 @@ export function Field({
   onChange: (value: string) => void;
   suffix?: string;
   step?: string;
-  type?: 'number' | 'date';
+  type?: 'number' | 'date' | 'text';
 }) {
   return (
     <label className="block text-sm font-medium">

@@ -36,9 +36,9 @@
 
 ## Milestone 4: Garage (local-first)
 
-- [ ] "My car" profile stored in localStorage (no account)
-- [ ] Parts and repairs log, service history, and expiry reminders (service plan, licence disc)
-- [ ] JSON export and import, plus "delete all my data"
+- [x] "My car" profile stored in localStorage (no account)
+- [x] Parts and repairs log, service history, and expiry reminders (service plan, licence disc)
+- [x] JSON export and import, plus "delete all my data"
 
 ## Milestone 5: Sell / upgrade
 

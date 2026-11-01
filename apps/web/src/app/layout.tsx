@@ -18,9 +18,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Link href="/" className="text-lg font-bold">
               Carwise SA
             </Link>
-            <Link href="/phases" className="text-sm text-slate-600 hover:text-slate-900">
-              Ownership phases
-            </Link>
+            <span className="flex gap-4 text-sm text-slate-600">
+              <Link href="/phases" className="hover:text-slate-900">
+                Ownership phases
+              </Link>
+              <Link href="/garage" className="hover:text-slate-900">
+                My garage
+              </Link>
+            </span>
           </nav>
         </header>
         <main className="mx-auto max-w-4xl px-4 py-10">{children}</main>
