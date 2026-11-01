@@ -6,3 +6,5 @@ export * from './fuel';
 export * from './licence';
 export * from './service';
 export * from './tyres';
+export * from './tco';
+export * from './affordability';

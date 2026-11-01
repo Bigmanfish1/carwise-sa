@@ -7,46 +7,47 @@ const cents = z.number().int().nonnegative();
  * Inputs for a vehicle finance calculation.
  * Money is integer cents, rates and percentages are decimals (0.115 = 11.5%).
  */
-export const financeInputSchema = z
-  .object({
-    /** Cash price of the vehicle. */
-    price: cents.refine((v) => v > 0, 'Price must be greater than zero'),
-    deposit: cents.default(0),
-    /** Value credited for a traded-in vehicle. */
-    tradeIn: cents.default(0),
-    /** Nominal annual interest rate, compounded monthly. */
-    annualRate: z.number().min(0).max(1),
-    termMonths: z.number().int().min(1).max(120),
-    /** Balloon (residual) as a share of the cash price. */
-    balloonPercent: z.number().min(0).max(1).default(0),
-    initiationFee: cents.default(0),
-    /** true: the initiation fee is added to the amount financed. false: paid upfront. */
-    initiationFeeFinanced: z.boolean().default(false),
-    /** Fee charged every month on top of the instalment. */
-    monthlyServiceFee: cents.default(0),
-  })
-  .superRefine((input, ctx) => {
-    if (input.deposit + input.tradeIn > input.price) {
-      ctx.addIssue({
-        code: 'custom',
-        path: ['deposit'],
-        message: 'Deposit plus trade-in cannot exceed the price',
-      });
-      return;
-    }
-    const financed =
-      input.price -
-      input.deposit -
-      input.tradeIn +
-      (input.initiationFeeFinanced ? input.initiationFee : 0);
-    if (roundCents(input.price * input.balloonPercent) > financed) {
-      ctx.addIssue({
-        code: 'custom',
-        path: ['balloonPercent'],
-        message: 'Balloon cannot exceed the amount financed',
-      });
-    }
-  });
+export const financeBaseSchema = z.object({
+  /** Cash price of the vehicle. */
+  price: cents.refine((v) => v > 0, 'Price must be greater than zero'),
+  deposit: cents.default(0),
+  /** Value credited for a traded-in vehicle. */
+  tradeIn: cents.default(0),
+  /** Nominal annual interest rate, compounded monthly. */
+  annualRate: z.number().min(0).max(1),
+  termMonths: z.number().int().min(1).max(120),
+  /** Balloon (residual) as a share of the cash price. */
+  balloonPercent: z.number().min(0).max(1).default(0),
+  initiationFee: cents.default(0),
+  /** true: the initiation fee is added to the amount financed. false: paid upfront. */
+  initiationFeeFinanced: z.boolean().default(false),
+  /** Fee charged every month on top of the instalment. */
+  monthlyServiceFee: cents.default(0),
+});
+
+/** The base schema plus the cross-field checks (deposit within price, balloon within principal). */
+export const financeInputSchema = financeBaseSchema.superRefine((input, ctx) => {
+  if (input.deposit + input.tradeIn > input.price) {
+    ctx.addIssue({
+      code: 'custom',
+      path: ['deposit'],
+      message: 'Deposit plus trade-in cannot exceed the price',
+    });
+    return;
+  }
+  const financed =
+    input.price -
+    input.deposit -
+    input.tradeIn +
+    (input.initiationFeeFinanced ? input.initiationFee : 0);
+  if (roundCents(input.price * input.balloonPercent) > financed) {
+    ctx.addIssue({
+      code: 'custom',
+      path: ['balloonPercent'],
+      message: 'Balloon cannot exceed the amount financed',
+    });
+  }
+});
 
 export type FinanceInput = z.input<typeof financeInputSchema>;
 

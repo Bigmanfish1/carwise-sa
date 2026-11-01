@@ -11,6 +11,10 @@ export const PHASES: readonly Phase[] = [
     name: 'Plan',
     summary:
       'Work out what you can afford, decide between new and used, and compare the total cost of up to three cars.',
+    tools: [
+      { href: '/plan/affordability', label: 'Can I afford this car?' },
+      { href: '/plan/compare', label: 'Compare the total cost of up to 3 cars' },
+    ],
   },
   {
     slug: 'buy',

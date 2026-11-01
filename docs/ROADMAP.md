@@ -30,9 +30,9 @@
 
 ## Milestone 3: Total cost of ownership and comparison
 
-- [ ] `calculateTCO`, which combines finance, fuel, insurance (user-entered), servicing, tyres, licence and depreciation over N years
-- [ ] Compare up to 3 cars side by side, with cost per km and cost per month
-- [ ] Affordability check (car costs as a share of take-home pay, with a configurable threshold)
+- [x] `calculateTCO`, which combines finance, fuel, insurance (user-entered), servicing, tyres, licence and depreciation over N years
+- [x] Compare up to 3 cars side by side, with cost per km and cost per month
+- [x] Affordability check (car costs as a share of take-home pay, with a configurable threshold)
 
 ## Milestone 4: Garage (local-first)
 
